@@ -70,7 +70,13 @@ I designed the wireframes for this project using Balsamic, this allowed me to ea
 You can view the **wireframes** for this project [here](https://github.com/Taitdanielle/Gynnie/tree/master/wireframes).
 # Features:
 ### Current Features:
-* Landing page the requires user to verifiy if they are 18 or not. 
+* Landing page the requires user to verifiy if they are **18** or not. 
 * Register an account form, Sign-in & Sign-out.
 * Add to favourites option , allowing users to select item as a 'favourite' and having them visible on their own, 'your cocktails' page.
 * Users can leave reviews on individual cocktails, edit and delete their reviews. Also take a look on  what other people have to say about the cocktails.
+## Future Features::bulb:
+* A more advanced product information section, including maps leading users to the closest places where they can taste the cocktails or make their own at a cocktail making class.
+* An option to purchase the products users can see on the website.
+* An option to purchase utencils that are used to make cocktails
+* An option for users to subscribe to a e-mailing list to keep up to date with the latest from Gynnie.
+
