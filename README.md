@@ -1,4 +1,4 @@
-Hi and Welcome to **Gynnie** if you're a **gin lover** :heart_eyes: like me, and not just the basic stuff, **explore** the wide range of variety using this website and make sure to add your **favourites** to your personal list. :cocktail:
+Hi and Welcome to **Gynnie** if you're a **gin lover** and love **cocktails** too :heart_eyes: like me, and not just the basic stuff, **explore** the wide range of varieties using this website and make sure to add your **favourites** to your personal list. :cocktail:
 ## Contents:
 * UX 👍
 * Project Goals
