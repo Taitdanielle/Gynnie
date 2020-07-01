@@ -59,4 +59,6 @@ The goal of this project is to show various types of Gin Cocktails. The users wh
 The design of this website had to be colourful and fresh like the many Gin's and cocktails created all over the world, The colours will attract the user to go through the website with interest. 
 
 ### Fonts:
-I chose to use the 'Poppins' font for the content on the website, it provides clear layout for the content on the website and easy to read.
+I chose to use the ['Poppins'](https://fonts.google.com/specimen/Poppins) font for the content on the website, it provides clear layout for the content on the website and easy to read.
+### Colours:
+The colours I chose to use for this website are bright eye catching colours that will potentially increase the interaction levels on the website.
