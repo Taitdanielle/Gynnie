@@ -43,9 +43,15 @@ The goal of this project is to show various types of Gin Cocktails. The users wh
 **Katie**  says: "I've wanted to find a website that provides me with a list of gin based cocktails and all the info about them, it would be nice to be able to store these drinks on a list of some sort so I can keep track of which ones I've had!"
 **Billie** says: "When I search for gin online im often bombarded with marketing promotions and offers, I want a clean elegant website that offers me the information i need when I need it"
 ## User Requirements and Expectations:
-### Requirements:
-1. Interact with a visually appealing website.
-2. Navigate the website with ease & with fast load times.
-3. Extract information on various gin cocktails.
-4. Information on the website to be laid out in a clear and effective way.
+### Requirements: 
+1. Navigate the website with ease & fast loading times.
+2. Extract information on various gin cocktails.
+3. Interact with a visually appealing website.
+4. Information on the website to be laid out in a clearly.
 5. Construct a list of cocktails to try, or to remember.
+### Expectations:
+1. The website protects the users information.
+2. The users can interact with the elements visible on the page.
+3. The website loads with sufficient speed.
+4. The content on the website renders correctly on desktop, mobile and tablet.
+5. The users feel informed and satisfied with the informaton available.
