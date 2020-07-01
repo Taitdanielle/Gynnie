@@ -80,4 +80,20 @@ You can view the **wireframes** for this project [here](https://github.com/Taitd
 * An option to purchase utencils that are used to make cocktails
 * An option for users to subscribe to a e-mailing list to keep up to date with the latest from Gynnie.
 # Technologies Used :computer::
+## Languages:
+* HTML
+* CSS
+* JavaScript
+* JSON
+* Python 
+## Tools & Libraries:
+* jQuery
+* Git
+* Bootstrap
+* Font-Awesome
+* TinyPng (image compression)
+* MongoDB Atlas
+* PyMongo
+* Flask
+* Jinja
 
