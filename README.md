@@ -49,7 +49,7 @@ The goal of this project is to show various types of Gin Cocktails. The users wh
 3. Interact with a visually appealing website.
 4. Information on the website to be laid out in a clearly.
 5. Construct a list of cocktails to try, or to remember.
-### Expectations:
+### Expectations: :eyes:
 1. The website protects the users information.
 2. The users can interact with the elements visible on the page.
 3. The website loads with sufficient speed.
@@ -62,3 +62,5 @@ The design of this website had to be colourful and fresh like the many Gin's and
 I chose to use the ['Poppins'](https://fonts.google.com/specimen/Poppins) font for the content on the website, it provides clear layout for the content on the website and easy to read.
 ### Colours:
 The [colours](https://github.com/Taitdanielle/Gynnie/blob/master/wireframes/colours.png) I chose to use for this website are bright eye catching colours that will potentially increase the interaction levels on the website.
+### Images:
+The images I have chosen to use on the website were selected to invite people into the website by looking fresh,appelaing and bright.
