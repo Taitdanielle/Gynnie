@@ -69,8 +69,8 @@ I designed the wireframes for this project using Balsamic, this allowed me to ea
 
 You can view the **wireframes** for this project [here](https://github.com/Taitdanielle/Gynnie/tree/master/wireframes).
 # Features:
-### Features that have been developed:
-Landing page the requires user to verifiy if they are 18 or not. 
-Register an account form, Sign-in & Sign-out.
-Add to favourites option , allowing users to select item as a 'favourite' and having them visible on their own, 'your cocktails' page.
-Users can leave reviews on individual cocktails, edit and delete their reviews. Also take a look on  what other people have to say about the cocktails.
+### Current Features:
+* Landing page the requires user to verifiy if they are 18 or not. 
+* Register an account form, Sign-in & Sign-out.
+* Add to favourites option , allowing users to select item as a 'favourite' and having them visible on their own, 'your cocktails' page.
+* Users can leave reviews on individual cocktails, edit and delete their reviews. Also take a look on  what other people have to say about the cocktails.
