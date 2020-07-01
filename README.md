@@ -25,3 +25,5 @@ Hi and Welcome to **Gynnie** if you're a **gin lover** and love **cocktails** to
    * Bugs :bug:
 * Deployment :rocket:
   * Deploying to Heroku
+## Project Goals:
+The goal of this project is to show various types of Gin Cocktails. The users who have access to website will be able to create a favourites list from a list of products. This website is aimed for people over the age of 18 only! :underage:
