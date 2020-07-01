@@ -26,4 +26,10 @@ Hi and Welcome to **Gynnie** if you're a **gin lover** and love **cocktails** to
 * Deployment :rocket:
   * Deploying to Heroku
 ## Project Goals:
-The goal of this project is to show various types of Gin Cocktails. The users who have access to website will be able to create a favourites list from a list of products. This website is aimed for people over the age of 18 only! :underage:
+The goal of this project is to show various types of Gin Cocktails. The users who have access to website will be able to create a favourites list from a list of products. This website is aimed for people over the age of **18 only!** :underage:
+## Target Audience Goals:
+* Create an account and create a favourites list to keep track of the all the cocktails they have tested and enjoyed.
+* To be able to find out information about various gin cocktail beverages.
+* A visually appealing, fresh and inviting design.
+* An option to send a messege.
+* To be able to view the information on the website on Desktop, Tablet and mobile devices with ease.
