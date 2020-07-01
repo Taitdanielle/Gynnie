@@ -41,3 +41,4 @@ The goal of this project is to show various types of Gin Cocktails. The users wh
 ## User Stories:
 **Mike** says: "Im looking for a page that not only works on my computer but also on my phone so that i can access it when im out and about exploring cities."
 **Katie**  says: "I've wanted to find a website that provides me with a list of gin based cocktails and all the info about them, it would be nice to be able to store these drinks on a list of some sort so I can keep track of which ones I've had!"
+**Billie** says: "When I search for gin online im often bombarded with marketing promotions and offers, I want a clean elegant website that offers me the information i need when I need it"
