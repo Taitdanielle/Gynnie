@@ -25,16 +25,16 @@ Hi and Welcome to **Gynnie** if you're a **gin lover** and love **cocktails** to
    * Bugs :bug:
 * Deployment :rocket:
   * Deploying to Heroku
-# User Experience
-## Project Goals:
+## User Experience
+### Project Goals:
 The goal of this project is to show various types of Gin Cocktails. The users who have access to website will be able to create a favourites list from a list of products. This website is aimed for people over the age of **18 only!** :underage:
-## Target Audience Goals:
+### Target Audience Goals:
 * Create an account and create a favourites list to keep track of the all the cocktails they have tested and enjoyed.
 * To be able to find out information about various gin cocktail beverages.
 * A visually appealing, fresh and inviting design.
 * An option to send a messege.
 * To be able to view the information on the website on Desktop, Tablet and mobile devices with ease.
-## Site Owner Goals:
+### Site Owner Goals:
 * Generate interest for various branded gin/cocktails.
 * Attract different brandeds to feature on the website.
 * Recieve messages from the users to interact with.
@@ -42,3 +42,10 @@ The goal of this project is to show various types of Gin Cocktails. The users wh
 **Mike** says: "Im looking for a page that not only works on my computer but also on my phone so that i can access it when im out and about exploring cities."
 **Katie**  says: "I've wanted to find a website that provides me with a list of gin based cocktails and all the info about them, it would be nice to be able to store these drinks on a list of some sort so I can keep track of which ones I've had!"
 **Billie** says: "When I search for gin online im often bombarded with marketing promotions and offers, I want a clean elegant website that offers me the information i need when I need it"
+## User Requirements and Expectations:
+### Requirements:
+1. Interact with a visually appealing website.
+2. Navigate the website with ease & with fast load times.
+3. Extract information on various gin cocktails.
+4. Information on the website to be laid out in a clear and effective way.
+5. Construct a list of cocktails to try, or to remember.
