@@ -64,3 +64,7 @@ I chose to use the ['Poppins'](https://fonts.google.com/specimen/Poppins) font f
 The [colours](https://github.com/Taitdanielle/Gynnie/blob/master/wireframes/colours.png) I chose to use for this website are bright eye catching colours that will potentially increase the interaction levels on the website.
 ### Images:
 The images I have chosen to use on the website were selected to invite people into the website by looking fresh,appelaing and bright.
+### Wireframes: :wrench:
+I designed the wireframes for this project using Balsamic, this allowed me to easily design a wireframe for multiple devices, and for all the pages and features I wanted to include on the project. Having these were useful to provide me with a layout to follow when writing the code for the website.
+
+You can view the **wireframes** for this project [here](https://github.com/Taitdanielle/Gynnie/tree/master/wireframes).
