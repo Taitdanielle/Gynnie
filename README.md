@@ -21,7 +21,7 @@ Hi and Welcome to **Gynnie** if you're a **gin lover** and love **cocktails** to
   * Current Features
   * Future Features 
 * Technologies Used :computer:
-* Planning + Testing: :clipboard:
+* Planning & Testing: :clipboard:
    * Bugs :bug:
 * Deployment :rocket:
   * Deploying to Heroku
@@ -33,3 +33,7 @@ The goal of this project is to show various types of Gin Cocktails. The users wh
 * A visually appealing, fresh and inviting design.
 * An option to send a messege.
 * To be able to view the information on the website on Desktop, Tablet and mobile devices with ease.
+## Site Owner Goals:
+* Generate interest for various branded gin/cocktails.
+* Attract different brandeds to feature on the website.
+* Recieve messages from the users to interact with.
