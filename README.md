@@ -108,8 +108,9 @@ Ensure you have the following installed:
 
 # Credits :credit_card:
 
-[Igor Basuga](https://github.com/bravoalpha79) For helping me uderstand enviroment variables a lot better
-[Coolors](https://coolors.co/)
-Unicorn Revealer
+* [Igor Basuga](https://github.com/bravoalpha79) For helping me uderstand enviroment variables a lot better
+* 
+* [Coolors](https://coolors.co/)
+* Unicorn Revealer
 ## Disclaimer :loudspeaker:
 This website was built for educational purposes only.
