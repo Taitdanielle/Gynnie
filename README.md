@@ -106,7 +106,7 @@ Ensure you have the following installed:
 3. Git
 4. An account at MongoDB in order to build the database.
 
-# Credits :credit_c
+# Credits :credit_card:
 
 [Igor Basuga](https://github.com/bravoalpha79) For helping me uderstand enviroment variables a lot better
 [Coolors](https://coolors.co/)
