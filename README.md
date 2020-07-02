@@ -96,4 +96,13 @@ You can view the **wireframes** for this project [here](https://github.com/Taitd
 * PyMongo
 * Flask
 * Jinja
+## Deployment :rocket:
+Gynnie:cocktail: was developed on Gitpod, using git and GitHub to host the repository.
+
+Cloning **Gynnie** :cocktail: from **GitHub:**
+Ensure you have the following installed:
+1. PIP
+2. Python 3
+3. Git
+4. An account at MongoDB in order to build the database.
 
