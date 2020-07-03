@@ -16,8 +16,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 @app.route('/landing.html')
 def landing():
     return render_template('landing.html')
+
 @app.route('/home')
-def index():
+def home():
     return render_template('home.html')
 
 @app.route('/contact.html')
