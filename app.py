@@ -12,8 +12,25 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")    
 
 @app.route('/')
+
+@app.route('/landing.html')
+def landing():
+    return render_template('landing.html')
+@app.route('/home')
 def index():
-    return render_template("base.html")
+    return render_template('home.html')
+
+@app.route('/contact.html')
+def contact():
+    return render_template('contact.html')
+
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
