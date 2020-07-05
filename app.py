@@ -4,15 +4,15 @@ from form import RegistrationForm, LoginForm
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
-    import env
+import env
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DB_NAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")    
+app.secret_key = os.environ.get("SECRET_KEY")
+mongo = PyMongo(app)
 
-@app.route('/')
 
 @app.route('/landing.html')
 def landing():
@@ -24,22 +24,17 @@ def home():
 
 @app.route('/contact.html')
 def contact():
-    return render_template('contact.html')
-
-
-
-
+    return render_template('contact-form.html')
 
 @app.route('/register')
 def register():
     form = RegistrationForm()
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register-form.html', title='Register', form=form)
 
 @app.route('/login')
-def register():
+def login():
     form = LoginForm()
-    return render_template('Login.html', title='Login', form=form)
-
+    return render_template('login-form.html', title='Login', form=form)
 
 
 if __name__ == "__main__":
