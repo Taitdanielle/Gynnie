@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request, flash, url_for
+from form import RegistrationForm, LoginForm
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -29,8 +30,15 @@ def contact():
 
 
 
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title='Register', form=form)
 
-
+@app.route('/login')
+def register():
+    form = LoginForm()
+    return render_template('Login.html', title='Login', form=form)
 
 
 
