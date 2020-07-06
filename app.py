@@ -1,7 +1,8 @@
 import os
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
+from flask_bcrypt import Bcrypt
+
 if os.path.exists("env.py"):
     import env
 
@@ -47,6 +48,7 @@ def register():
         return 'That username already exists!'
 
     return render_template('register-form.html')
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
