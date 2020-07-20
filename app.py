@@ -13,12 +13,22 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 def index():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
-    return render_template('base.html')
+    return render_template('pages/home.html')
+@app.route('/<bob>')
+def name(bob):
+    if 'username' in session:
+        return 'You are logged in as ' + session['username']
+
+    return render_template('pages/home.html',myname=bob)
+
+
+
 
 @app.route('/login', methods=['POST'])
 def login():
