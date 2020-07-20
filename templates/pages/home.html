@@ -1,29 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
-</head>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="/static/images/gynnie.png" width="30" height="30" alt="">
-  </a>
-</nav>
-<body>
-<!-- image will go here -->
-<h1> Welcome to Gynnie </h1>
+{% extends "layout/base.html" %}
+{% block content %}
+<section>
 
-<p>Please sign in or if you don't have an account please register to start you Gynnie journey!</p>
+<h2>Welcome Back {{myname}}!</h2>
+<p>We are happy you decided to visit again!</p>
 
-<button type="button">Login</button> <button type="button">Register</button>
+</section>
+
+<section>
+
+<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Have a look throught the current Cocktails listed, Check out how to make them. Add them to your very own favorites list to keep for later!</p>
+
+<p>Please sign in or if you don't have an account please register to start the Gynnie journey!</p>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
-</html>
+</section>
+
+<section>
+
+<h2>Cocktail of the month...</h2>
+
+<p>Check out this months Cocktail of the month.....Have a look at the ingredients and try for yourself!</p>
+
+</section>
+{% endblock %}
