@@ -19,13 +19,13 @@ def index():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
-    return render_template('pages/home.html')
+    return render_template('pages/index.html')
 @app.route('/<bob>')
 def name(bob):
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
-    return render_template('pages/home.html',myname=bob)
+    return render_template('pages/index.html', myname=bob)
 
 
 
