@@ -56,14 +56,21 @@ def register():
 
     return render_template('components/forms/register-form.html')
 
-
 @app.route('/allcocktails')
 def cocktails():
+
+    cocktail = mongo.db.cocktail
+    cocktail.find({})
+
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails")
     
 @app.route('/mycocktails')
 def mycocktails():
     return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails")    
+
+@app.route('/contactus')
+def contact():
+    return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails")     
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
