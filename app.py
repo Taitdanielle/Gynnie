@@ -70,7 +70,7 @@ def mycocktails():
 
 @app.route('/contactus')
 def contact():
-    return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails")     
+    return render_template("components/forms/contact-form.html", page_title="Contact Us")     
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
