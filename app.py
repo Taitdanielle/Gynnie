@@ -60,9 +60,9 @@ def register():
 def cocktails():
 
     cocktail = mongo.db.cocktail
-    cocktail.find({})
+    results = cocktail.find({})
 
-    return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails")
+    return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails, cocktails=results")
     
 @app.route('/mycocktails')
 def mycocktails():
