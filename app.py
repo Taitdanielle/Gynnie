@@ -28,8 +28,6 @@ def name(bob):
     return render_template('pages/index.html', myname=bob)
 
 
-
-
 @app.route('/login', methods=['POST'])
 def login():
     users = mongo.db.users
@@ -38,7 +36,7 @@ def login():
     if login_user:
         if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
             session['username'] = request.form['username']
-            return redirect(url_for('index'))
+            return render_template('components/forms/login-form.html')
 
     return 'Invalid username/password combination'
 
@@ -56,13 +54,16 @@ def register():
         
         return 'That username already exists!'
 
-    return render_template('register-form.html')
+    return render_template('components/forms/register-form.html')
 
 
-@app.route('/contact-form.html')
+@app.route('/allcocktails')
 def contact():
-    return render_template('contact-form.html')
-
+    return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails")
+    
+@app.route('/mycocktails')
+def contact():
+    return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails")    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
