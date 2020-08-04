@@ -58,11 +58,11 @@ def register():
 
 
 @app.route('/allcocktails')
-def contact():
+def cocktails():
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails")
     
 @app.route('/mycocktails')
-def contact():
+def mycocktails():
     return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails")    
 
 if __name__ == "__main__":
