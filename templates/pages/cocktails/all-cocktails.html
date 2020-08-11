@@ -2,12 +2,19 @@
 {% block content %}
 <h1 class="page-title"> Take a look at our Cocktails</h1>
 {% for cocktail in cocktails %}
-    <h3>{{cocktail.cocktail_name}}</h3>
+    <h3></h3>
+    
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="{{cocktail.cocktail_name}}">
+  <div class="card-body">
+    <p class="card-text">
     <ul>
         <li>{{ cocktail.description }}</li>
         <li>{{ cocktail.ABV }}</li>
         <li>{{ cocktail.how_to }}</li>
         <li><img src="{{ cocktail.cocktail_img }}"></li>
-    </ul>
+    </ul></p>
+  </div>
+</div>
 {% endfor %}
 {% endblock content %}
