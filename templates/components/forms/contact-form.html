@@ -1,7 +1,12 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<h1 class="page-title"> Contact Us</h1>
+<section class="row">
+    <div class="col-sm-12">
+        <h3 class="page-title">Get in touch</h3>
+    </div>
+    <div class="col-sm-12">
+        <form class="account-nav__form" action="{{ url_for('contact') }}" method="POST">
 
 {% include 'components/forms/contact-form.html' %}
 {% endblock %}
