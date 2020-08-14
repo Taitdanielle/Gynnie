@@ -1,6 +1,19 @@
 {% extends "layout/base.html" %}
 {% block content %}
-<h1 class="page-title"> Here are your favorite Cocktail's</h1>
-
-
+<section class="row">
+    <div class="col-sm-12">
+        <div class="my-list">
+            {% if favourite_cocktail|length %}
+            <h2 class="my-list__title">Here are your favorite Cocktail's</h2>
+            {% else %}
+            <div class="my-list__no-beers">
+                <h2 class="my-list__title">Oh No!</h2>
+                <p class="my-list__text">Your list is empty</p>
+                <p class="my-list__text">Click below to browse Gynnie's Cocktails and add them to your list!</p>
+            </div>
+            <a aria-label="Cocktails" class="btn btn__primary" href="{{ url_for('cocktails') }}">View Cocktail's</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
 {% endblock %}
