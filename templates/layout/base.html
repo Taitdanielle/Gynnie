@@ -17,7 +17,7 @@
     <a class="nav-link active" href="{{ url_for('index') }}">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{ url_for('allcocktails') }}">All Cocktails</a>
+    <a class="nav-link" href="{{ url_for('cocktails') }}">All Cocktails</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
@@ -29,6 +29,19 @@
 {% block content %} 
 {% endblock %}
 
+<!--- Footer -->
+<footer>
+<div class="social-icons">
+            <a class="background-facebook" href="https://facebook.com" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="background-instagram" href="https://instagram.com" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="background-twitter" href="https://twitter.com" target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i>
+ </div>               
+ </footer>
 <!--- scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
