@@ -1,40 +1,40 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 <section class="row">
-    <div class="col-sm-12">
-        <h1 class="add-drink-title">Add Your Own Cocktail</h1>
-    </div>
+	<div class="col-sm-12">
+		<h1 class="add-drink-title">Add Your Own Cocktail</h1>
+	</div>
 </section>
 <section class="add-cocktail-form-background row">
-    <div class="col-sm-6 offset-sm-3 col-xs-12">
-        <form enctype=multipart/form-data action="{{ url_for('add_drink') }}" method="POST" class="add-drink-form">
-            <div class="add-drink-form__collection">
-                <div class="add-drink-form__group">
-                    <div class="add-drink-form__group__text">
-                        <label for="name">Name</label>
-                    </div>
-                    <input required id="name" name="name" type="text">
+	<div class="col-sm-6 offset-sm-3 col-xs-12">
+		<form enctype=multipart/form-data action="{{ url_for('add_drink') }}" method="POST" class="add-drink-form">
+			<div class="add-drink-form__collection">
+				<div class="add-drink-form__group">
+					<div class="add-drink-form__group__text">
+						<label for="name">Name</label>
+					</div>
+					<input required id="name" name="name" type="text">
                 </div>
-                <div class="add-drink-form__group">
-                    <div class="add-drink-form__group__text">
-                        <label for="name">Image</label>
-                    </div>
-                    <input id="image" name="image" type="text" required placeholder="include file path">
+					<div class="add-drink-form__group">
+						<div class="add-drink-form__group__text">
+							<label for="name">Image</label>
+						</div>
+						<input id="image" name="image" type="text" required placeholder="include file path">
                 </div>
-                     <div class="add-drink-form__group">
-                    <div class="add-drink-form__group__text">
-                        <label for="name">How to</label>
-                    </div>
-                    <input required type="text">
-                         <div class="add-drink-form__group">
-                    <div class="add-drink-form__group__text">
-                        <label for="name">Ingredients</label>
-                    </div>
-                    <input required type="text">
-                                        <input class="btn btn__primary" type="submit" value="Add Drink">
+						<div class="add-drink-form__group">
+							<div class="add-drink-form__group__text">
+								<label for="name">How to</label>
+							</div>
+							<input required type="text">
+							<div class="add-drink-form__group">
+								<div class="add-drink-form__group__text">
+									<label for="name">Ingredients</label>
+								</div>
+								<input required type="text">
+								<input class="btn btn__primary" type="submit" value="Add Drink">
                 </div>
-            </div>
-        </form>
-    </div>
+							</div>
+		</form>
+	</div>
 </section>
 {% endblock %}
