@@ -72,6 +72,20 @@ def mycocktails():
 def contact():
     return render_template("components/forms/contact-form.html", page_title="Contact Us")     
 
+# Edit Review page
+@app.route('/review/edit/<review_id>', methods=["GET", "POST"])
+def edit_review(review_id):
+    
+    if request.method == 'POST':
+        mongo.db.reviews.update({'_id': ObjectId(review_id)}, {
+            '$set': {'review': request.form.get('review')}})
+        return redirect(url_for('edit_review', review_id=review_id))
+    users = mongo.db.users
+    review = mongo.db.reviews.find({"_id": ObjectId(review_id)})
+    return render_template("pages/edit-review-form.html",
+                           body_id="edit-review-page", review=review, review_id=review_id,
+                           current_user=users.find_one({'name': session['username']}))    
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=os.environ.get("PORT"),
