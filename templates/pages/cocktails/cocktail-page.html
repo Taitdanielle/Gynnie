@@ -18,3 +18,13 @@
                 <h2 class="cocktail-page__review__title">What do other people think?</h2>
                 <div class="cocktail-page__review__wrapper">
                     <div class="cocktail-page__review__reviews">
+{% for review in drink_reviews %}
+                        <div class="cocktail-page__review__comment">
+                            <div class="row align-items-center">
+                                <div class="col-md-10 col-xs-12">
+                                    <h4>{{ review.name }} Says...</h4>
+                                    <p>"{{ review.review }}"</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12">
+                                    <div class="cocktail-page__review__comment__icons">
+                                        {% if review.name == session['username'] or current_user['admin'] == true  %}
