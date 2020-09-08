@@ -11,32 +11,61 @@
 				<div class="cocktail-page__right-panel">
 					<h1 class="cockail-page__right-panel__title">{{ cocktail.name }}</h1>
 					<p class="cocktail-page__right-panel__text"><span>Type: </span>{{ cocktail.type }}</p>
-					<p class="cocktail-page__right-panel__text"><span>ABV (alchohol by volume): </span>{{ cocktail.abv }}</p>
+					<p class="cocktail-page__right-panel__text">
+						<span>ABV (alchohol by volume): </span>{{ cocktail.abv }}</p>
 					<p class="cocktail-page__right-panel__text"><span>Tasting Notes: </span>{{ drink.notes }}</p>
-<section class="row">
-            <div class="col-sm-12">
-                <h2 class="cocktail-page__review__title">What do other people think?</h2>
-                <div class="cocktail-page__review__wrapper">
-                    <div class="cocktail-page__review__reviews">
-{% for review in drink_reviews %}
-                        <div class="cocktail-page__review__comment">
-                            <div class="row align-items-center">
-                                <div class="col-md-10 col-xs-12">
-                                    <h4>{{ review.name }} Says...</h4>
-                                    <p>"{{ review.review }}"</p>
-                                </div>
-                                <div class="col-md-2 col-xs-12">
-                                    <div class="cocktail-page__review__comment__icons">
-                                        {% if review.name == session['username'] or current_user['admin'] == true  %}
-                                        <a aria-label="Delete This Review" class="ud-button-delete"
-                                            href="{{ url_for('delete_review', review_id=review._id)}}"><i
+					<section class="row">
+						<div class="col-sm-12">
+							<h2 class="cocktail-page__review__title">What do other people think?</h2>
+							<div class="cocktail-page__review__wrapper">
+								<div class="cocktail-page__review__reviews">
+									{% for review in drink_reviews %}
+									<div class="cocktail-page__review__comment">
+										<div class="row align-items-center">
+											<div class="col-md-10 col-xs-12">
+												<h4>{{ review.name }} Says...</h4>
+												<p>"{{ review.review }}"</p>
+											</div>
+											<div class="col-md-2 col-xs-12">
+												<div class="cocktail-page__review__comment__icons">
+													{% if review.name == session['username'] or current_user['admin'] == true  %}
+													<a aria-label="Delete This Review" class="ud-button-delete"
+														href="{{ url_for('delete_review', review_id=review._id)}}"><i
                                                 class="fas fa-trash"></i></a>
-                                        <a aria-label="Edit This Review" href="{{ url_for('edit_review', review_id=review._id)}}"><i
+													<a aria-label="Edit This Review"
+														href="{{ url_for('edit_review', review_id=review._id)}}"><i
                                                 class="fas fa-edit"></i></a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
+													{% endif %}
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+								<form class="cocktail-page__review__form"
+									action="{{ url_for('add_review', cocktail_id=drink._id) }}" method="POST">
+									<p>Please type your review in the box below and click submit.</p>
+									<div class="cocktail-page__review__form__group hidden">
+										<input type="text" name="name" id="name" value="{{ session['username'] }}">
                         </div>
-                        {% endfor %}
-                    </div>
+										<div class="beer-page__review__form__group hidden">
+											<input type="{{ ObjectId }}" name="drink_id" id="drink_id" value="{{drink._id}}">
+                        </div>
+											<div class="cocktail-page__review__form__group">
+												<p class="cocktail-page__review__form__group__close">
+													<i id="review-close" class="fas fa-window-close"></i></p>
+												<textarea class="cocktail-page__review__form__group__message" name="review" id="review"
+                                cols="30" rows="10"></textarea>
+											</div>
+											<input id="review-submit" class="cocktail-page__review__form__submit btn btn__primary"
+                            type="submit" value="Post Review">
+                    </form>
+											<div class="cocktail-page__review__leave-a-review">
+												<a aria-label="Leave A Review" class="btn btn__primary"
+													id="review-selector" href="#">Leave a review</a>
+											</div>
+										</div>
+									</div>
+					</section>
+				</div>
+</main>
