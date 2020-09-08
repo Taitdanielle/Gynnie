@@ -21,6 +21,11 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+    {% if 'username' in session %}
+    <li class="nav-item">
+					<a class="nav-link" href="{{url_for('logout')}}">Sign Out</a>
+				</li>
+                {% else %}
   </li>
   <li class="nav-item">
     <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
@@ -29,6 +34,7 @@
     <a class="nav-link" href="{{ url_for('register') }}">Register</a>
   </li>
 </ul>
+  {% endif %}
 {% block content %} 
 {% endblock %}
 
