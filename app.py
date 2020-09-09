@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request, flash, session, redirect, url_for
 from flask_pymongo import PyMongo
-from flask_bcrypt import Bcrypt
+from flask_bcrypt import bcrypt
 if os.path.exists("env.py"):
     import env
 
@@ -29,6 +29,10 @@ def name(bob):
 
     return render_template('pages/index.html', myname=bob)
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -70,11 +74,6 @@ def cocktails():
 
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=results)
 
-
-@app.route('/mycocktails')
-def mycocktails():
-    return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails")
-
 # Contact route
 
 
@@ -99,7 +98,7 @@ def contact():
                                body_id="contact-page", page_title="Contact Us")
 # Add Review route
 
-@ app.route('/review/add/<drink_id>', methods = ["GET", "POST"])
+@ app.route('/review/add/<drink_id>', methods = ["POST"])
 def add_review(drink_id):
     """
     Adds user review into the database.
@@ -107,7 +106,7 @@ def add_review(drink_id):
     mongo.db.reviews.insert({
         'name': request.form.get('name'),
         'review': request.form.get('review'),
-        'beer_id': ObjectId(drink_id),
+        'drink_id': ObjectId(drink_id),
     })
     return redirect(url_for('cocktail_page', drink_id=drink_id))
 
@@ -125,6 +124,21 @@ def edit_review(review_id):
     return render_template("pages/edit-review-form.html",
                            body_id = "edit-review-page", review = review, review_id = review_id,
                            current_user = users.find_one({'name': session['username']}))
+                           
+@ app.route('/cocktail/add', methods = ["GET"])
+def add_cocktail():
+    return render_template("pages/cocktails/add-cocktail.html")
+@ app.route('/cocktail/insert', methods = ["POST"])
+def insert_cocktail():
+    """
+    Adds user review into the database.
+    """
+    inserted_cocktail = mongo.db.cocktails.insert_one({
+        'name': request.form.get('name'),
+        'review': request.form.get('review'),
+        'drink_id': ObjectId(drink_id),
+    })
+    return redirect(url_for('cocktail_page', drink_id=inserted_cocktail.inserted_id))
 
 
 @ app.route('/cocktail/<drink_id>')
