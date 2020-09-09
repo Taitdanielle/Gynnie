@@ -3,7 +3,13 @@
 
 <section class="row">
     <div class="col-sm-12">
-        <h3 class="page-title">Want to get in touch</h3>
+        <h3 class="page-title">Want to get in touch?</h3>
+    </div>
+    <div class="col-sm-12">
+        <form class="account__form" action="{{ url_for('contact') }}" method="POST">
+        <div class="account__form__group">
+                <label class="account__form__group__label" for="name">Name<span class="required"> *</span></label>
+                <input class="account__form__group__input" required type="name" name="name">
+            </div>
 
-{% include 'components/forms/contact-form.html' %}
 {% endblock %}
