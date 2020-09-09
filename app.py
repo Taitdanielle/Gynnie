@@ -80,8 +80,21 @@ def mycocktails():
 def contact():
     return render_template("components/forms/contact-form.html", page_title="Contact Us")
 
-# Edit Review page
+# Add Review route
 
+@app.route('/review/add/<drink_id>', methods=["GET", "POST"])
+def add_review(drink_id):
+    """
+    Adds user review into the database.
+    """
+    mongo.db.reviews.insert({
+        'name': request.form.get('name'),
+        'review': request.form.get('review'),
+        'beer_id': ObjectId(drink_id),
+    })
+    return redirect(url_for('cocktail_page', drink_id=drink_id))    
+
+# Edit Review page
 
 @app.route('/review/edit/<review_id>', methods=["GET", "POST"])
 def edit_review(review_id):
@@ -101,16 +114,16 @@ def edit_review(review_id):
 def cocktail_page(drink_id):
     """
     Constructs page for single cocktail and
-    makes reviews and favailable for front end.
+    makes reviews for front end.
     """
     users = mongo.db.users
     the_beer = mongo.db.cocktail.find_one({"_id": ObjectId(drink_id)})
-    you_might_like = mongo.db.beers.find().limit(3)
+    you_might_like = mongo.db.cocktail.find().limit(3)
     test = mongo.db.reviews.find({'drink_id': ObjectId(drink_id)})
     reviews = []
     current_user_obj = users.find_one({'name': session['username'].lower()})
     reviews.append(i)
-    return render_template('pages/beers/beer.html',
+    return render_template('pages/cocktails/cocktail-page.html',
                            cocktail_reviews=reviews,
                            body_id="drink-product", current_user=users.find_one(
                                {'name': session['username']}))
