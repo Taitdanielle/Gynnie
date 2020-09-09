@@ -75,9 +75,15 @@ def cocktails():
 def mycocktails():
     return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails")
 
+# Contact route
 
-@app.route('/contactus')
+@app.route('/contactus', methods=["GET", "POST"])
 def contact():
+    try:
+        users = mongo.db.users
+        if request.method == "POST":
+            flash("Thanks {} we have received your message! A member of our team will be in touch shortly".format(
+                request.form["name"]))
     return render_template("components/forms/contact-form.html", page_title="Contact Us")
 
 # Add Review route
