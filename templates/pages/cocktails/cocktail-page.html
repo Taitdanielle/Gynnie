@@ -9,11 +9,13 @@
 			</div>
 			<div class="col-sm-12 col-md-6">
 				<div class="cocktail-page__right-panel">
-					<h1 class="cockail-page__right-panel__title">{{ cocktail.name }}</h1>
-					<p class="cocktail-page__right-panel__text"><span>Type: </span>{{ cocktail.type }}</p>
+					<h1 class="cockail-page__right-panel__title">{{ cocktail.cocktail_name }}</h1>
 					<p class="cocktail-page__right-panel__text">
-						<span>ABV (alchohol by volume): </span>{{ cocktail.abv }}</p>
-					<p class="cocktail-page__right-panel__text"><span>Tasting Notes: </span>{{ drink.notes }}</p>
+						<span>ABV (alchohol by volume): </span>{{ cocktail.ABV }}</p>
+					<p class="cocktail-page__right-panel__text">
+						<span>Description: </span>{{ cocktail.description }}</p>
+					<p class="cocktail-page__right-panel__text">
+						<span>How To: </span>{{ cocktail.how_to }}</p>
 					<section class="row">
 						<div class="col-sm-12">
 							<h2 class="cocktail-page__review__title">What do other people think?</h2>
@@ -23,7 +25,7 @@
 									<div class="cocktail-page__review__comment">
 										<div class="row align-items-center">
 											<div class="col-md-10 col-xs-12">
-												<h4>{{ review.name }} Says...</h4>
+												<h4>{{ review.name }} Said...</h4>
 												<p>"{{ review.review }}"</p>
 											</div>
 											<div class="col-md-2 col-xs-12">
