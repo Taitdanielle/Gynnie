@@ -2,38 +2,37 @@
 {% block content %}
 
 <section class="row">
-    <div class="col-sm-12">
-        <h3 class="page-title">Want to get in touch?</h3>
-    </div>
-    <div class="col-sm-12">
-        <form class="account__form" action="{{ url_for('contact') }}" method="POST">
-        <div class="account__form__group">
-                <label class="account__form__group__label" for="name">Name<span class="required"> *</span></label>
-                <input class="account__form__group__input" required type="name" name="name">
+	<div class="col-sm-12">
+		<h3 class="page-title">Want to get in touch?</h3>
+	</div>
+	<div class="col-sm-12">
+		<form class="account__form" action="{{ url_for('contact') }}" method="POST">
+			<div class="account__form__group">
+				<label class="account__form__group__label" for="name">Name<span class="required"> *</span></label>
+				<input class="account__form__group__input" required type="name" name="name">
             </div>
-                       <div class="account__form__group">
-                <label class="account__form__group__label" for="email">Email<span class="required"> *</span></label>
-                <input class="account__form__group__input" required type="email" name="email">
+				<div class="account__form__group">
+					<label class="account__form__group__label" for="email">Email<span class="required"> *</span></label>
+					<input class="account__form__group__input" required type="email" name="email">
             </div>
-                        <div class="account__form__group">
-                <label class="account__form__group__label" for="message">Message<span class="required">
-                        *</span></label>
-                                        <textarea class="account__form__group__input" name="message" cols="30" rows="10"></textarea>
-                {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                {% for message in messages %}
-                <div class="account__form__group__success">
-                    <p>{{ message }}</p>
-                </div>
-                {% endfor %}
-                {% endif %}
-                {% endwith %}
+					<div class="account__form__group">
+						<label class="account__form__group__label" for="message">Message<span class="required">*</span></label>
+						<textarea class="account__form__group__input" name="message" cols="30" rows="10"></textarea>
+						{% with messages = get_flashed_messages() %}
+						{% if messages %}
+						{% for message in messages %}
+						<div class="account__form__group__success">
+							<p>{{ message }}</p>
+						</div>
+						{% endfor %}
+						{% endif %}
+						{% endwith %}
+					</div>
+					<div class="account__form__group--submit">
+						<input class="btn btn__primary" type="submit">
             </div>
-            <div class="account__form__group--submit">
-                <input class="btn btn__primary" type="submit">
-            </div>
-        </form>
-    </div>
+		</form>
+	</div>
 </section>
 
 {% endblock %}
