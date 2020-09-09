@@ -18,5 +18,22 @@
                         <div class="account__form__group">
                 <label class="account__form__group__label" for="message">Message<span class="required">
                         *</span></label>
+                                        <textarea class="account__form__group__input" name="message" cols="30" rows="10"></textarea>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="account__form__group__success">
+                    <p>{{ message }}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <div class="account__form__group--submit">
+                <input class="btn btn__primary" type="submit">
+            </div>
+        </form>
+    </div>
+</section>
 
 {% endblock %}
