@@ -1,43 +1,25 @@
-<div class="content-section">
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                <legend>Log In</legend>
-                <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
-                    {% if form.email.errors %}
-                        {{ form.email(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.email(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }}
-                    {% if form.password.errors %}
-                        {{ form.password(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.password(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-check">
-                    {{ form.remember(class="form-check-input") }}
-                    {{ form.remember.label(class="form-check-label") }}
-                </div>
-            </fieldset>
-            <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+<section class="row">
+    <div class="col-sm-12">
+        <form class="__form" action="{{ url_for('login') }}" method="POST">
+            <div class="form__group">
+                <label class="form__group__label" for="username">Username</label>
+                <input class="form__group__input" type="text" name="username">
             </div>
-                <a href="#">Forgot Password?</a>
+            <div class="form__group">
+                <label class="form__group__label" for="password">Password</label>
+                <input class="form__group__input" type="password" name="password">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="form__group__error">
+                    <p>{{ message }}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+                <input class="btn btn__primary" type="submit" value="Login">
+            </div>
         </form>
     </div>
-            Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+    </section>
