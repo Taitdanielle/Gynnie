@@ -34,17 +34,24 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
-@app.route('/login', methods=['POST'])
+# Login page
+@app.route('/login', methods=["GET", "POST"])
 def login():
-    users = mongo.db.users
-    login_user = users.find_one({'name': request.form['username']})
+    """
+    Renders login page.
+    """
+    if request.method == 'POST':
+        users = mongo.db.users
+        login_user = users.find_one({'name': request.form['username'].lower()})
 
-    if login_user:
-        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
-            session['username'] = request.form['username']
-            return render_template('components/forms/login-form.html')
-
-    return 'Invalid username/password combination'
+        if login_user:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'),
+                             login_user['password']) == login_user['password']:
+                session['username'] = request.form['username']
+                return redirect(url_for('index'))
+            flash('That username/password combination was incorrect')
+            return redirect(url_for('login'))
+    return render_template('components/forms/login-form.html')
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -52,17 +59,23 @@ def register():
     if request.method == 'POST':
         users = mongo.db.users
         existing_user = users.find_one({'name': request.form['username']})
+        password = request.form['password']
+        repeat_password = request.form['repeat_password']
 
-        if existing_user is None:
-            hashpass = bcrypt.hashpw(
-                request.form['pass'].encode('utf-8'), bcrypt.gensalt())
-            users.insert(
-                {'name': request.form['username'], 'password': hashpass})
-            session['username'] = request.form['username']
-            return redirect(url_for('index'))
-
-        return 'That username already exists!'
-
+        if password == repeat_password:
+            if existing_user is None:
+                hashpass = bcrypt.hashpw(
+                    request.form['password'].encode('utf-8'), bcrypt.gensalt())
+                users.insert({
+                    'name': request.form['username'].lower(),
+                    'password': hashpass,
+                })
+                session['username'] = request.form['username']
+                return redirect(url_for('index'))
+            flash('That username already exists, try something else.')
+        flash('The passwords dont match.')
+        return 'That Username is already taken'
+   
     return render_template('components/forms/register-form.html')
 
 
@@ -75,7 +88,6 @@ def cocktails():
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=results)
 
 # Contact route
-
 
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
