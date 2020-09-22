@@ -2,7 +2,7 @@
 {% block content %}
 <h1 class="page-title"> Take a look at our Cocktails</h1>
 {% for cocktail in cocktails %}
-
+<div class="col-sm-12 col-md-6 col-lg-4">
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="static/images/gynnie.png" alt="">
   <div class="card-body">
@@ -12,6 +12,7 @@
         <img src="{{ cocktail.cocktail_img }}">
     </ul></p>
   </div>
+</div>
 </div>
 {% endfor %}
 {% endblock content %}
