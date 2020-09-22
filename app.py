@@ -53,7 +53,7 @@ def login():
             return redirect(url_for('login'))
     return render_template('components/forms/login-form.html')
 
-
+# Register form 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
