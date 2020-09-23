@@ -87,15 +87,19 @@ def cocktails():
 
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=results)
 
-# Add a cocktail page	
-	@app.route(‘/cocktail/add', methods=["GET", "POST"])
-	def add_cocktail():
-	"""
-	Adds a cocktail into the database
-	"""
+# Add cocktail page
+@app.route('/cocktails/add', methods=["GET", "POST"])
+def add_cocktail():
 
+    if request.method == 'POST':
+        mongo.db.beers.insert_one(request.form.to_dict())
+        return redirect(url_for('cocktails'))
+    users = mongo.db.users
+    return render_template('pages/cocktails/add-cocktail.html',
+                           body_id="add-drink", types=mongo.db.types.find(),
+                           current_user=users.find_one(
+                               {'name': session['username'].lower()}))
 # Contact route
-
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     """
@@ -145,7 +149,7 @@ def edit_review(review_id):
                            current_user = users.find_one({'name': session['username']}))
                            
 @ app.route('/cocktail/add', methods = ["GET"])
-def add_cocktail():
+def add_cocktails():
     return render_template("pages/cocktails/add-cocktail.html")
 @ app.route('/cocktail/insert', methods = ["POST"])
 def insert_cocktail():
