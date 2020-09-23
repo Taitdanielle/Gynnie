@@ -87,6 +87,13 @@ def cocktails():
 
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=results)
 
+# Add a cocktail page	
+	@app.route(‘/cocktail/add', methods=["GET", "POST"])
+	def add_cocktail():
+	"""
+	Adds a cocktail into the database
+	"""
+
 # Contact route
 
 @app.route('/contact', methods=["GET", "POST"])
