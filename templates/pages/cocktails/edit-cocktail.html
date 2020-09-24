@@ -34,3 +34,11 @@
                     </div>
                     <input id="ingredients" name="ingredients" type="text" value="{{ cocktail.ingredients }}">
                 </div>
+                                <div class="add-cocktail-form__group">
+                    <div class="add-cocktail-form__group__text">
+                        <label for="name">Image:</label>
+                    </div>
+                    <input id="image" name="image" type="text" required placeholder="update file path">
+                    <p>Current image:</p>
+                    <img class="img-responsive" src="/{{cocktail.image}}" alt="{{cocktail.name}}">
+                </div>
