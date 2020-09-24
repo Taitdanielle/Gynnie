@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+<section class="row">
+    <div class="col-sm-12">
+        <h1 class="add-cocktail-title">Edit {{cocktail.name}}</h1>
+    </div>
+</section>
+<section class="add-cocktail-form-background row">
+    <div class="col-sm-12">
+        <form id="update-this-cocktail" action="{{ url_for('cocktail', drink_id=drink._id) }}" method="POST"
+            class="add-cocktail-form">
+            <div class="add-cocktail-form__collection">
+                <div class="add-cocktail-form__group">
+                    <div class="add-cocktail-form__group__text">
+                        <label for="name">Name:</label>
+                    </div>
+                    <input id="name" name="name" type="text" value="{{ cocktail.cocktail_name }}">
+                </div>
