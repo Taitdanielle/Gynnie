@@ -7,7 +7,7 @@
 </section>
 <section class="add-cocktail-form-background row">
     <div class="col-sm-12">
-        <form id="update-this-cocktail" action="{{ url_for('cocktail', drink_id=drink._id) }}" method="POST"
+        <form id="update-this-cocktail" action="{{ url_for('cocktail', drink_id=drink_id) }}" method="POST"
             class="add-cocktail-form">
             <div class="add-cocktail-form__collection">
                 <div class="add-cocktail-form__group">
@@ -40,7 +40,7 @@
                     </div>
                     <input id="image" name="image" type="text" required placeholder="update file path">
                     <p>Current image:</p>
-                    <img class="img-responsive" src="/{{cocktail.image}}" alt="{{cocktail.name}}">
+                    <img class="img-responsive" src="/{{cocktail.image}}" alt="{{cocktail.cocktail.name}}">
                 </div>
                                 <div class="add-cocktail-form__group">
                     <input class="btn btn__primary" type="submit" value="Update Cocktail">
