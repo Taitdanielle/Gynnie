@@ -102,7 +102,7 @@ def cocktails():
 def add_cocktails():
 
     if request.method == 'POST':
-        mongo.db.beers.insert_one(request.form.to_dict())
+        mongo.db.cocktails.insert_one(request.form.to_dict())
         return redirect(url_for('cocktail'))
     users = mongo.db.users
     return render_template('pages/cocktails/add-cocktail.html',
