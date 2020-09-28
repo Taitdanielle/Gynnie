@@ -1,16 +1,15 @@
 <div class="container">
     <div class="row">
-            <form method=POST action="{{ url_for('register') }}">
+            <form method="POST" action="{{ url_for('register') }}">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Create a username:</label>
                     <input type="text" class="form-control" name="username" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Create a password:</label>
-                    <input type="password" class="form-control" name="pass" placeholder="Password">
+                    <label for="password">Create a password:</label>
+                    <input type="password" id="password" class="form-control" name="password" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
             </form>
-            <br>
         </div>
     </div>
