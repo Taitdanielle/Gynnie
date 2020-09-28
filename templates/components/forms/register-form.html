@@ -1,15 +1,36 @@
-<div class="container">
-    <div class="row">
-            <form method="POST" action="{{ url_for('register') }}">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Create a username:</label>
-                    <input type="text" class="form-control" name="username" placeholder="Username">
+<section class="row">
+    <div class="col-sm-12">
+        <form class="register__form" action="{{ url_for('register') }}" method="POST">
+            <div class="register__form__group">
+                <label class="register__form__group__label" for="username">Username</label>
+                <input required class="register__form__group__input" type="text" name="username">
+            </div>
+            <div class="register__form__group">
+                <label class="register__form__group__label" for="password">Password</label>
+                <input required class="register__form__group__input" type="password" name="password">
+            </div>
+            <div class="register__form__group">
+                <label class="register__form__group__label" for="repeat-password">Repeat Password</label>
+                <input required class="register__form__group__input" type="password" name="repeat_password">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="register__form__group__error">
+                    <p>{{ message }}</p>
                 </div>
-                <div class="form-group">
-                    <label for="password">Create a password:</label>
-                    <input type="password" id="password" class="form-control" name="password" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
-            </form>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <div class="register__form__group--submit">
+                <input class="btn btn__primary" type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-12">
+        <div class="register__bottom-button">
+            <p class="register__bottom-button__text">Already have an account? <a aria-label="Login" class="btn btn__primary"
+                    href="{{ url_for('login') }}">Log In Here</a></p>
         </div>
     </div>
+</section>
