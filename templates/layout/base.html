@@ -26,9 +26,9 @@
 					<a class="nav-link" href="{{url_for('logout')}}">Sign Out</a>
 				</li>
     <li class="nav-item">
-                    <a href="{{ url_for('add-cocktail') }}">Add Cocktail</a>
+                    <a class="nav-link" href="{{ url_for('add_cocktail') }}">Add Cocktail</a>
     <li class="nav-item">
-                    <a href="{{ url_for('my-cocktail') }}">My Cocktails</a>                         
+                    <a class="nav-link" href="{{ url_for('my_cocktails') }}">My Cocktails</a>                         
                 {% else %}
   </li>
   <li class="nav-item">
@@ -43,18 +43,39 @@
 {% endblock %}
 
 <!--- Footer -->
-<footer>
-<div class="social-icons">
-            <a class="background-facebook" href="https://facebook.com" target="_blank" rel="noopener">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a class="background-instagram" href="https://instagram.com" target="_blank" rel="noopener">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a class="background-twitter" href="https://twitter.com" target="_blank" rel="noopener">
-                <i class="fab fa-twitter"></i>
-            </a>          
- </footer>
+<!-- Footer -->
+		<footer class="container-fluid text-center">
+			<div id="footer-details" class="row">
+				<div class="col-sm-12">
+					<ul class="list-inline social-links">
+						<li class="list-inline-item">
+							<a target="_blank" rel="noopener" href="https://www.facebook.com">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+								<span class="sr-only">Facebook</span>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a target="_blank" rel="noopener" href="https://www.twitter.com">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+								<span class="sr-only">Twitter</span>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a target="_blank" rel="noopener" href="https://www.instagram.com">
+								<i class="fa fa-instagram " aria-hidden="true"></i>
+								<span class="sr-only">Instagram</span>
+							</a>
+						</li>
+					</ul>
+					<!-- Linked to github -->
+					<div class="col-12 text-center small">
+						<a href="https://github.com/Taitdanielle">@2020 DanielleTait</a>
+					</div>
+				</div>
+			</div>
+
+		</footer>
+		<!--./footer end -->
 <!--- scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
