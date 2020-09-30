@@ -7,12 +7,24 @@ body,html{
 }
 
 
+/* contact form backhgound */
 #contact-form {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601470132/background2.jpg");
+background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 107%;
+  height: 35em;
+}
+  @media (min-width: 600px) {   
+}
+/* welcome background */
+#wp {
+  background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601469895/cocktail-background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 200px;
+  min-height: 600px;
 }
 
 /* footer */
