@@ -28,6 +28,7 @@ background-position: center;
 }
   @media (min-width: 600px) {   
 }
+
 /* welcome background */
 #wp {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601469895/cocktail-background.jpg");
@@ -62,10 +63,16 @@ footer a:hover,
 footer a:focus{
     color: rgb(193, 218, 241);
 }
-p,
+p {
+    text-align: center;
+	color: #254E70;
+}
+
 h1,
 h2,
 h3 {
     text-align: center;
-	color: #254E70;
+    color: #254E70;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
