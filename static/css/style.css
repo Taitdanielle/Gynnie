@@ -6,6 +6,16 @@ body,html{
 	text-align: center;
 }
 
+/* nav */
+
+
+ul.nav {
+background-color: #c33c54;
+}
+.nav-link {
+    color: #fff;
+}
+
 
 /* contact form backhgound */
 #contact-form {
@@ -52,4 +62,10 @@ footer a:hover,
 footer a:focus{
     color: rgb(193, 218, 241);
 }
-}}
+p,
+h1,
+h2,
+h3 {
+    text-align: center;
+	color: #254E70;
+}
