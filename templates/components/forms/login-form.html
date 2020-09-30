@@ -1,25 +1,25 @@
-<section class="row">
-    <div class="col-sm-12">
-        <form class="__form" action="{{ url_for('login') }}" method="POST">
-            <div class="form__group">
-                <label class="form__group__label" for="username">Username</label>
-                <input class="form__group__input" type="text" name="username">
+<section class="row" id="login-form">
+	<div class="col-sm-12">
+		<form class="__form" action="{{ url_for('login') }}" method="POST">
+			<div class="form__group">
+				<label class="form__group__label" for="username">Username</label>
+				<input class="form__group__input" type="text" name="username">
             </div>
-            <div class="form__group">
-                <label class="form__group__label" for="password">Password</label>
-                <input class="form__group__input" type="password" name="password">
+				<div class="form__group">
+					<label class="form__group__label" for="password">Password</label>
+					<input class="form__group__input" type="password" name="password">
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
                 {% for message in messages %}
-                <div class="form__group__error">
-                    <p>{{ message }}</p>
-                </div>
-                {% endfor %}
-                {% endif %}
-                {% endwith %}
+					<div class="form__group__error">
+						<p>{{ message }}</p>
+					</div>
+					{% endfor %}
+					{% endif %}
+					{% endwith %}
+				</div>
+				<input class="btn btn__primary" type="submit" value="Login">
             </div>
-                <input class="btn btn__primary" type="submit" value="Login">
-            </div>
-        </form>
-    </div>
-    </section>
+		</form>
+	</div>
+</section>
