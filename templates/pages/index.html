@@ -1,26 +1,28 @@
 {% extends "layout/base.html" %}
 {% block content %}
 <section>
+	{% if 'username' in session %}
+	<h2>Welcome Back {{name}}!</h2>
+	<p>We are happy you decided to visit again!</p>
+	{% else %}{% endif %}
+</section>
 
-<h2>Welcome Back {{myname}}!</h2>
-<p>We are happy you decided to visit again!</p>
+<section class="wp" text-center>
+
+	<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Have a look throught the current Cocktails listed,
+		Check out how to make them. Add them to your very own favorites list to keep for later!</p>
+
+	<p>Please <a href="{{ url_for('login') }}">Log in</a> or if you don't have an account please <a
+			href="{{ url_for('register') }}">Register</a> to start the Gynnie journey!</p>
+
 
 </section>
 
-<section>
+<section class="cotm">
 
-<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Have a look throught the current Cocktails listed, Check out how to make them. Add them to your very own favorites list to keep for later!</p>
+	<h2>Cocktail of the month...</h2>
 
-<p>Please <a href="{{ url_for('login') }}">Log in</a> or if you don't have an account please <a href="{{ url_for('register') }}">Register</a> to start the Gynnie journey!</p>
-
-
-</section>
-
-<section>
-
-<h2>Cocktail of the month...</h2>
-
-<p>Check out this months Cocktail of the month.....Have a look at the ingredients and try for yourself!</p>
-
+	<p>Check out this months Cocktail of the month.....Have a look at the ingredients and try for yourself!</p>
+    <img src="static/images/ginfizz.jpg" alt="">
 </section>
 {% endblock %}
