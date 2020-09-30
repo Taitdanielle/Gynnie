@@ -15,25 +15,24 @@
 <body>
 
 	<!--- Nav Bar --->
-	<ul class="nav justify-content-end"id="nav-bar">
+    <div id="nav-bar">
+	<ul class="nav justify-content-end" >
 		<li class="nav-item">
 			<a class="nav-link active" href="{{ url_for('index') }}">Home</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="{{ url_for('cocktails') }}">All Cocktails</a>
 		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
 			{% if 'username' in session %}
 		<li class="nav-item">
-			<a class="nav-link" href="{{url_for('logout')}}">Sign Out</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="{{ url_for('add_cocktail') }}">Add Cocktail</a>
+			<a class="nav-link" href="{{ url_for('add_cocktails') }}">Add Cocktail</a>
 		<li class="nav-item">
 			<a class="nav-link" href="{{ url_for('my_cocktails') }}">My Cocktails</a>
-			{% else %}
 		</li>
+        <li class="nav-item">
+			<a class="nav-link" href="{{url_for('logout')}}">Sign Out</a>
+		</li>
+        {% else %}
 		<li class="nav-item">
 			<a class="nav-link" href="{{ url_for('login') }}">Log In</a>
 		</li>
@@ -42,12 +41,14 @@
 		</li>
 	
 	{% endif %}
+    		<li class="nav-item">
+			<a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
     </ul>
 	{% block content %}
 	{% endblock %}
 
     {% include 'layout/footer.html' %}
-
+</div>
 	<!--- scripts -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
