@@ -7,14 +7,14 @@
 	{% else %}{% endif %}
 </section>
 
-<section class="wp" text-center>
+<section id="wp">
 
 	<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Check out how to make them. Add your very own favorites to your own list to keep for later!</p>
-
+{% if 'username' not in session %}
 	<p>Please <a href="{{ url_for('login') }}">Log in</a> or if you don't have an account please <a
 			href="{{ url_for('register') }}">Register</a> to start the Gynnie journey!</p>
 
-
+{% else %}{% endif %}
 </section>
 
 <section class="cotm">
