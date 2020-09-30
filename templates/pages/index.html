@@ -2,7 +2,7 @@
 {% block content %}
 <section>
 	{% if 'username' in session %}
-	<h2>Welcome Back {{name}}!</h2>
+	<h2>Welcome Back {{my_name}}!</h2>
 	<p>We are happy you decided to visit again!</p>
 	{% else %}{% endif %}
 </section>
@@ -19,9 +19,9 @@
 
 <section class="cotm">
 
-	<h2>Cocktail of the month...</h2>
-
-	<p>Check out this months Cocktail of the month.....Have a look at the ingredients and try for yourself!</p>
+	<h2>Cocktail of the month...Gin Fizz!</h2>
+ 
+	<p>Check out this months Cocktail of the month.....</p>
     <img src="https://res.cloudinary.com/dkvc1tmqp/image/upload/c_scale,h_386,w_289/v1601470630/ginfizz.jpg" alt="">
     <p>More cocktails <a href="{{ url_for('cocktails') }}">here</a></p>
 </section>
