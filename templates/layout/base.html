@@ -15,7 +15,7 @@
 <body>
 
 	<!--- Nav Bar --->
-	<ul class="nav justify-content-end">
+	<ul class="nav justify-content-end"id="nav-bar">
 		<li class="nav-item">
 			<a class="nav-link active" href="{{ url_for('index') }}">Home</a>
 		</li>
@@ -40,8 +40,9 @@
 		<li class="nav-item">
 			<a class="nav-link" href="{{ url_for('register') }}">Register</a>
 		</li>
-	</ul>
+	
 	{% endif %}
+    </ul>
 	{% block content %}
 	{% endblock %}
 
