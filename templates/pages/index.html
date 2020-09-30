@@ -9,8 +9,7 @@
 
 <section class="wp" text-center>
 
-	<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Have a look throught the current Cocktails listed,
-		Check out how to make them. Add them to your very own favorites list to keep for later!</p>
+	<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Check out how to make them. Add your very own favorites to your own list to keep for later!</p>
 
 	<p>Please <a href="{{ url_for('login') }}">Log in</a> or if you don't have an account please <a
 			href="{{ url_for('register') }}">Register</a> to start the Gynnie journey!</p>
@@ -23,6 +22,7 @@
 	<h2>Cocktail of the month...</h2>
 
 	<p>Check out this months Cocktail of the month.....Have a look at the ingredients and try for yourself!</p>
-    <img src="https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601470630/ginfizz_tlzy96.jpg" alt="">
+    <img src="https://res.cloudinary.com/dkvc1tmqp/image/upload/c_scale,h_386,w_289/v1601470630/ginfizz.jpg" alt="">
+    <p>More cocktails <a href="{{ url_for('cocktails') }}">here</a></p>
 </section>
 {% endblock %}
