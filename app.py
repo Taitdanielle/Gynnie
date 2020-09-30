@@ -17,8 +17,6 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    if 'username' in session:
-        return 'You are logged in as ' + session['username']
 
     return render_template('pages/index.html')
 
@@ -144,6 +142,19 @@ def edit_cocktail(drink_id):
                            body_id='edit-page', cocktail=the_drink,
                            types=all_types, current_user=users.find_one(
                                {'name': session['username']}))
+
+ # My cocktail 
+@app.route('/cocktail/<drink_id>')
+def cocktail_page(drink_id):
+    """
+    Delete a cocktail from the database
+    """
+    mongo.db.cocktails.find_one({'_id': ObjectId(drink_id)})
+    return render_template('pages/cocktails/my-cocktails.html',
+                           body_id='edit-page', cocktail=the_drink,
+                           types=all_types, current_user=users.find_one(
+                               {'name': session['username']}))
+
 # Delete cocktail 
 @app.route('/cocktail/delete/<drink_id>')
 def delete_cocktail(drink_id):
