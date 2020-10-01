@@ -16,6 +16,9 @@ background-color: #c33c54;
     color: #fff;
 }
 
+.card-group {
+    display: flex; 
+}
 
 /* contact form backhgound */
 #contact-form {
