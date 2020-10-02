@@ -4,10 +4,10 @@ body,html{
 	font-family:'Poppins', sans-serif;
 	font-weight: 400;
 	text-align: center;
+    height: 100%;
 }
 
 /* nav */
-
 
 ul.nav {
 background-color: #c33c54;
@@ -20,7 +20,7 @@ background-color: #c33c54;
     display: flex; 
 }
 
-/* contact form backhgound */
+/* contact form background */
 #contact-form {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601470132/background2.jpg");
 background-position: center;
@@ -56,15 +56,9 @@ footer a {
     
 }
 
-social-links a {
-  font-size: 20px;
-  padding: 5px 5px 5px 5px;
-  text-decoration: none; 
-  }
-
 footer a:hover,
 footer a:focus{
-    color: rgb(193, 218, 241);
+    color: #254E70;
 }
 p {
     text-align: center;
