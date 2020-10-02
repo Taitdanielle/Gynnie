@@ -14,14 +14,13 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 @app.route('/')
 def index():
 
     return render_template('pages/index.html')
 
 @app.route('/<bob>')
-def name(bob):
+def name():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
@@ -90,10 +89,9 @@ def my_cocktails():
 def cocktails():
 
     if 'username' not in session: redirect(url_for('login'))
-    cocktail = mongo.db.cocktail
-    results = cocktail.find({})
+    cocktails = mongo.db.cocktails.find()
 
-    return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=results)
+    return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=cocktails)
 
 # Add cocktail page
 @app.route('/cocktails/add', methods=["GET", "POST"])
@@ -119,8 +117,11 @@ def insert_cocktail():
     """
     inserted_cocktail = mongo.db.cocktails.insert_one({
         'name': request.form.get('name'),
-        'drink_id': ObjectId(drink_id),
-    })
+        'description': request.form.get('description'),
+        'how_to': request.form.get('how_to'),
+        'ingredients': request.form.get('ingredients'),
+        'image': request.form.get('image')})
+
     return redirect(url_for('cocktail_page', drink_id=inserted_cocktail.inserted_id))
 # Edit cocktail page
 @app.route('/cocktail/edit/<drink_id>', methods=["GET", "POST"])
@@ -149,11 +150,10 @@ def cocktail_page(drink_id):
     """
     Delete a cocktail from the database
     """
-    mongo.db.cocktails.find_one({'_id': ObjectId(drink_id)})
-    return render_template('pages/cocktails/my-cocktails.html',
+    the_drink = mongo.db.cocktails.find_one({"_id": ObjectId(drink_id)})
+    return render_template('pages/cocktails/cocktail-page.html',
                            body_id='edit-page', cocktail=the_drink,
-                           types=all_types, current_user=users.find_one(
-                               {'name': session['username']}))
+                        current_user=session['username'])
 
 # Delete cocktail 
 @app.route('/cocktail/delete/<drink_id>')
@@ -161,7 +161,7 @@ def delete_cocktail(drink_id):
     """
     Delete a cocktail from the database
     """
-    mongo.db.cocktail.remove({'_id': ObjectId(drink_id)})
+    mongo.db.cocktails.remove({'_id': ObjectId(drink_id)})
     return redirect(url_for('cocktails'))
 
 # Contact page
