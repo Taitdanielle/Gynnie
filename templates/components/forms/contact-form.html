@@ -1,18 +1,18 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<div class="row" id="contact-form">
+<div class="row">
 	<div class="col-sm-12">
-		<h3 class="page-title">Want to get in touch?</h3>
+		<h1 class="page-title">Want to get in touch?</h1>
 	</div>
-	<div class="col-sm-12">
+	<div class="col-sm-12 "id="contact-form">
 		<form class="account__form" action="{{ url_for('contact') }}" method="POST">
 			<div class="account__form__group">
-				<label class="account__form__group__label" for="name">Name<span class="required"> *</span></label>
+				<label class="account__form__group__label" for="name">Name<span class="required">*</span></label>
 				<input class="account__form__group__input" required type="name" name="name">
             </div>
 				<div class="account__form__group">
-					<label class="account__form__group__label" for="email">Email<span class="required"> *</span></label>
+					<label class="account__form__group__label" for="email">Email<span class="required">*</span></label>
 					<input class="account__form__group__input" required type="email" name="email">
             </div>
 					<div class="account__form__group">
