@@ -1,14 +1,10 @@
 {% extends "layout/base.html" %}
 {% block content %}
-<section>
+<section id="wp">
 	{% if 'username' in session %}
-	<h2>Welcome Back {{ myname }}!</h2>
+	<h1>Welcome Back {{ myname }}!</h1>
 	<p>We are happy you decided to visit again!</p>
 	{% else %}{% endif %}
-</section>
-
-<section id="wp">
-
 	<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Check out how to make them. Add your very own favorites to your own list to keep for later!</p>
 {% if 'username' not in session %}
 	<p>Please <a href="{{ url_for('login') }}">Log in</a> or if you don't have an account please <a
