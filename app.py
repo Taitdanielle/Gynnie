@@ -24,7 +24,7 @@ def name():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
-    return render_template('pages/index.html', myname=bob)
+    return render_template('pages/index.html', myname=name)
 # Logout page
 @app.route('/logout')
 def logout():
@@ -118,8 +118,8 @@ def insert_cocktail():
     inserted_cocktail = mongo.db.cocktails.insert_one({
         'name': request.form.get('name'),
         'description': request.form.get('description'),
-        'how_to': request.form.get('how_to'),
         'ingredients': request.form.get('ingredients'),
+        'how_to': request.form.get('how_to'),
         'image': request.form.get('image')})
 
     return redirect(url_for('cocktail_page', drink_id=inserted_cocktail.inserted_id))
@@ -132,8 +132,8 @@ def edit_cocktail(drink_id):
         cocktail.update({'_id': ObjectId(drink_id)},
                         {'name': request.form.get('name'),
                          'description': request.form.get('description'),
-                         'how_to': request.form.get('how_to'),
                          'ingredients': request.form.get('ingredients'),
+                         'how_to': request.form.get('how_to'),
                          'image': request.form.get('image')})
         return redirect(url_for('cocktail_page', drink_id=drink_id))
     users = mongo.db.users
@@ -152,8 +152,7 @@ def cocktail_page(drink_id):
     """
     the_drink = mongo.db.cocktails.find_one({"_id": ObjectId(drink_id)})
     return render_template('pages/cocktails/cocktail-page.html',
-                           body_id='edit-page', cocktail=the_drink,
-                        current_user=session['username'])
+                           body_id='edit-page', cocktail=the_drink)
 
 # Delete cocktail 
 @app.route('/cocktail/delete/<drink_id>')
