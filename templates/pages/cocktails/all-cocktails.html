@@ -2,12 +2,15 @@
 {% block content %}
 <h1 class="page-title"> Take a look at our Cocktails</h1>
 {% for cocktail in cocktails %}
-<div class="col-sm-12 col-md-6 col-lg-4">
-	<div class="card" style="width: 18rem;">
-		<img class="card-img-top" src="{{cocktail.image}}" alt="{{cocktail.cocktail_name}}">
-		<div class="card-body">
-			<p class="card-text-center">
-				<h4><a href="{{ url_for('cocktail_page', drink_id=cocktail._id) }}">{{cocktail.cocktail_name}}</a></h4>
+<div class="container">
+	<div class="col-sm-12 col-md-6 col-lg-4">
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="{{cocktail.image}}" alt="{{cocktail.cocktail_name}}">
+			<div class="card-body">
+				<p class="card-text-center">
+					<h4><a href="{{ url_for('cocktail_page', drink_id=cocktail._id) }}">{{cocktail.cocktail_name}}</a>
+					</h4>
+			</div>
 		</div>
 	</div>
 </div>
