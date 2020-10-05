@@ -5,9 +5,9 @@
 		<h1 class="add-drink-title">Add Your Own Cocktail</h1>
 	</div>
 </section>
-<section class="add-cocktail-form-background row">
+<section class="add-cocktail-form-background row" id="add-cocktail">
 	<div class="col-sm-6 offset-sm-3 col-xs-12">
-		<form enctype=multipart/form-data action="{{ url_for('insert_cocktail') }}" method="POST"
+		<form enctype="multipart/form-data" action="{{ url_for('insert_cocktail') }}" method="POST"
 			class="add-drink-form">
 			<div class="add-drink-form__collection">
 				<div class="add-drink-form__group">
@@ -26,16 +26,15 @@
 							<div class="add-drink-form__group__text">
 								<label for="name" name="how_to">How to</label>
 							</div>
-							<textarea id="hot-to-text"required type="text"></textarea>
+							<textarea id="how-to-text"required type="text"> </textarea>
 							<div class="add-drink-form__group">
 								<div class="add-drink-form__group__text">
 									<label for="name">Ingredients</label>
 								</div>
 								<textarea required type="text">
                                 </textarea>
-								<input class="btn btn__primary" type="submit" value="Add Drink">
-                            </div>
+							</div>
+							<input class="btn btn__primary" type="submit" value="Add Drink">
 		</form>
-	</div>
 </section>
 {% endblock %}
