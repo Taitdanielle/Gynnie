@@ -5,11 +5,11 @@
 	<div class="col-sm-12">
 		<form class="__form" action="{{ url_for('login') }}" method="POST">
 			<div class="form__group">
-				<label class="form__group__label" for="username">Username</label>
+				<label class="form__group__label" for="username">Username:</label>
 				<input class="form__group__input" type="text" name="username">
             </div>
 				<div class="form__group">
-					<label class="form__group__label" for="password">Password</label>
+					<label class="form__group__label" for="password">Password:</label>
 					<input class="form__group__input" type="password" name="password">
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
