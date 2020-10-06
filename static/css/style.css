@@ -16,14 +16,10 @@ background-color: #c33c54;
     color: #fff;
 }
 
-.card-group {
-    display: flex; 
-}
-
-/* contact form background */
+/* contact form background*/
 #contact-form {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601470132/background2.jpg");
-background-position: center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 107%;
@@ -32,34 +28,70 @@ background-position: center;
   @media (min-width: 600px) {   
 }
 
-/* welcome background */
+/* welcome background*/
 #wp {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601469895/cocktail-background.jpg");
-  background-position: center;
+  background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 600px;
 }
-
-/* footer */
-.footer-details {
-    display: flex; 
-    padding: 20px;
+  @media (min-width: 600px) {   
 }
-footer a {
-    color: #c33c54;
+/* addd cocktail background*/
+#add-cocktail {
+  background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601928316/pexels-chris-f-1283219_gnzeqm.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 107%;
+  height: 35em;
+}
+  @media (min-width: 600px) {   
+}
+
+#login-form {
+  background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1602004108/pexels-toni-cuenca-616836_vzeaj1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40em;
+  margin-bottom: 10%;
+}
+  @media (min-width: 600px) {   
+}
+
+#register-form {
+  background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1602004108/pexels-toni-cuenca-616836_vzeaj1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40em;
+}
+  @media (min-width: 600px) {   
+}
+/* footer */
+footer {
     padding: 15px;
     font-size: 15px;
-    width: 50px;
+    width: 100px;
     text-align: center;
     text-decoration: none;
-    
+    background-color:#c33c54; 
+    min-height: 70px;
+	margin: 0;
 }
 
 footer a:hover,
 footer a:focus{
-    color: #254E70;
+    color: #fff;
 }
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 p {
     text-align: center;
 	color: #254E70;
@@ -72,4 +104,36 @@ h3 {
     color: #254E70;
     margin-top: 5rem;
     margin-bottom: 5rem;
+}
+
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #254E70;;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.btn {
+  background-color: #c33c54;
+  color: white;
+  padding: 5px 5px;
+  margin: 10px 5px;
+  border: none;
+  cursor: pointer;
+  width: 15%;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
 }
