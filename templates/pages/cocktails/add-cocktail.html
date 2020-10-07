@@ -12,27 +12,32 @@
 			<div class="add-drink-form__collection">
 				<div class="add-drink-form__group">
 					<div class="add-drink-form__group__text">
-						<label for="name">Name</label>
+						<label for="name">Name:</label>
 					</div>
 					<input required id="name" name="name" type="text">
                 </div>
-					<div class="add-drink-form__group">
-						<div class="add-drink-form__group__text">
-							<label for="name">Image</label>
-						</div>
-						<input id="image" name="image" type="text" required placeholder="include file path">
+					<div class="add-drink-form__group__text">
+						<label for="name">Description:</label>
+					</div>
+					<input required id="description" name="description" type="text">
                 </div>
+					<textarea id="how-to-text"required type="text"> </textarea>
+					<div class="add-drink-form__group">
+					<div class="add-drink-form__group__text">
+							<label for="name">Ingredients:</label>
+						</div>
 						<div class="add-drink-form__group">
 							<div class="add-drink-form__group__text">
 								<label for="name" name="how_to">How to</label>
 							</div>
-							<textarea id="how-to-text"required type="text"> </textarea>
+							<textarea required type="text">
+                                </textarea>
 							<div class="add-drink-form__group">
 								<div class="add-drink-form__group__text">
-									<label for="name">Ingredients</label>
+									<label for="name">Image:</label>
 								</div>
-								<textarea required type="text">
-                                </textarea>
+								<input id="image" name="image" type="text" required placeholder="include file path">
+                </div>
 							</div>
 							<input class="btn btn__primary" type="submit" value="Add Drink">
 		</form>
