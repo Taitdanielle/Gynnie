@@ -19,7 +19,7 @@ def index():
 
     return render_template('pages/index.html')
 
-@app.route('/<bob>')
+@app.route('/<myname>')
 def name():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
@@ -79,10 +79,9 @@ def register():
 @app.route('/cocktailpage')
 def my_cocktails():
 
-    cocktail = mongo.db.cocktail
-    results = cocktail.find({})
+    cocktails = mongo.db.cocktails.find()
 
-    return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails", cocktails=results)
+    return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails", cocktails=cocktails)
 
 # All cocktail page
 @app.route('/allcocktails')
@@ -93,23 +92,13 @@ def cocktails():
 
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=cocktails)
 
-# Add cocktail page
-@app.route('/cocktails/add', methods=["GET", "POST"])
-def add_cocktails():
-
-    if request.method == 'POST':
-        mongo.db.cocktails.insert_one(request.form.to_dict())
-        return redirect(url_for('cocktail'))
-    users = mongo.db.users
-    return render_template('pages/cocktails/add-cocktail.html',
-                           body_id="add-cocktail", types=mongo.db.types.find(),
-                           current_user=users.find_one(
-                               {'name': session['username'].lower()}))
 # Add Cocktail
 @ app.route('/cocktail/add', methods=["GET"])
 def add_cocktail():
-    if 'username' not in session: redirect(url_for('login'))
+    if 'username' not in session: 
+        redirect(url_for('login'))
     return render_template("pages/cocktails/add-cocktail.html")
+
 @ app.route('/cocktail/insert', methods=["POST"])
 def insert_cocktail():
     """
@@ -122,7 +111,8 @@ def insert_cocktail():
         'how_to': request.form.get('how_to'),
         'image': request.form.get('image')})
 
-    return redirect(url_for('cocktail_page', drink_id=inserted_cocktail.inserted_id))
+    return redirect(url_for('my_cocktails'))
+
 # Edit cocktail page
 @app.route('/cocktail/edit/<drink_id>', methods=["GET", "POST"])
 def edit_cocktail(drink_id):
@@ -144,12 +134,10 @@ def edit_cocktail(drink_id):
                            types=all_types, current_user=users.find_one(
                                {'name': session['username']}))
 
- # My cocktail 
+ # My cocktails 
 @app.route('/cocktail/<drink_id>')
 def cocktail_page(drink_id):
-    """
-    Delete a cocktail from the database
-    """
+
     the_drink = mongo.db.cocktails.find_one({"_id": ObjectId(drink_id)})
     return render_template('pages/cocktails/cocktail-page.html',
                            body_id='edit-page', cocktail=the_drink)
