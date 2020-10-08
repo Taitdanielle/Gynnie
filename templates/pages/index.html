@@ -5,20 +5,21 @@
 	<h1>Welcome Back {{ myname }}!</h1>
 	<p>We are happy you decided to visit again!</p>
 	{% else %}{% endif %}
-	<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Check out how to make them. Add your very own favorites to your own list to keep for later!</p>
-{% if 'username' not in session %}
+	<p>Welcome to Gynnie, The place to be if you enjoy Gin Cocktails. Check out how to make them. Add your very own
+		favorites to your own list to keep for later!</p>
+	{% if 'username' not in session %}
 	<p>Please <a href="{{ url_for('login') }}">Log in</a> or if you don't have an account please <a
 			href="{{ url_for('register') }}">Register</a> to start the Gynnie journey!</p>
 
-{% else %}{% endif %}
+	{% else %}{% endif %}
 </section>
 
 <section class="cotm">
 
 	<h2>Cocktail of the month...Gin Fizz!</h2>
- 
+
 	<p>Check out this months Cocktail of the month.....</p>
-    <img src="https://res.cloudinary.com/dkvc1tmqp/image/upload/c_scale,h_386,w_289/v1601470630/ginfizz.jpg" alt="">
-    <p>More cocktails <a href="{{ url_for('cocktails') }}">here</a></p>
+	<img src="https://res.cloudinary.com/dkvc1tmqp/image/upload/c_scale,h_386,w_289/v1601470630/ginfizz.jpg" alt="">
+	<p>More cocktails <a href="{{ url_for('cocktails') }}">here</a></p>
 </section>
 {% endblock %}
