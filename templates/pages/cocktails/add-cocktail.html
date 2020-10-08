@@ -1,6 +1,7 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 <section class="row">
+    <div class="container">
 	<div class="col-sm-12">
 		<h1 class="add-drink-title">Add Your Own Cocktail</h1>
 	</div>
@@ -11,35 +12,37 @@
 			class="add-drink-form">
 			<div class="add-drink-form__collection">
 				<div class="add-drink-form__group">
-					<div class="add-drink-form__group__text">
-						<label for="name">Name:</label>
+					<div class="add-cocktail-form__group__text">
+						<label for="cocktail_name">Cocktail Name:</label>
 					</div>
-					<input required id="name" name="name" type="text">
+					<input id="name" name="name" type="text">
                 </div>
-					<div class="add-drink-form__group__text">
-						<label for="name">Description:</label>
-					</div>
-					<input required id="description" name="description" type="text">
-                </div>
-					<textarea id="how-to-text"required type="text"> </textarea>
-					<div class="add-drink-form__group">
-					<div class="add-drink-form__group__text">
-							<label for="name">Ingredients:</label>
+					<div class="add-cocktail-form__group">
+						<div class="add-cocktail-form__group__text">
+							<label for="name">Description:</label>
 						</div>
-						<div class="add-drink-form__group">
-							<div class="add-drink-form__group__text">
-								<label for="name" name="how_to">How to</label>
-							</div>
-							<textarea required type="text">
-                                </textarea>
-							<div class="add-drink-form__group">
-								<div class="add-drink-form__group__text">
-									<label for="name">Image:</label>
-								</div>
-								<input id="image" name="image" type="text" required placeholder="include file path">
+						<input id="description" name="description" type="text">
                 </div>
+						<div class="add-cocktail-form__group">
+							<div class="add-cocktail-form__group__text">
+								<label for="name">How to:</label>
 							</div>
-							<input class="btn btn__primary" type="submit" value="Add Drink">
+							<input id="how_to" name="how_to" type="text">
+                </div>
+							<div class="add-cocktail-form__group">
+								<div class="add-cocktail-form__group__text">
+									<label for="name">Ingredients:</label>
+								</div>
+								<input id="ingredients" name="ingredients" type="text">
+                </div>
+								<div class="add-cocktail-form__group">
+									<div class="add-cocktail-form__group__text">
+										<label for="name">Image:</label>
+									</div>
+									<input id="image" name="image" type="text" required placeholder="include file path">
+                </div>
+								</div>
+								<input class="btn btn__primary" type="submit" value="Add Drink">
 		</form>
 </section>
 {% endblock %}
