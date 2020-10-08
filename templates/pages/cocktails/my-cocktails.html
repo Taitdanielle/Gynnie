@@ -3,17 +3,32 @@
 <section class="row">
     <div class="col-sm-12">
         <div class="my-list">
+        <h2 class="my-list__title">Here are your Cocktails</h2>
+        {% for cocktail in cocktails %} 
            
-            <h2 class="my-list__title">Here are your Cocktails</h2>
-          
-            <div class="my-list__no-cocktails">
-                <h2 class="my-list__title">Oh, Oh No!</h2>
-                <p class="my-list__text">Your list is empty</p>
-                <p class="my-list__text">Click below to browse Gynnie's Cocktails and add them to your list or add your own!</p>
-            </div>
+  <div class="container card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{{cocktail.image}}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{ cocktail.cocktail_name }}<i class="fas fa-cocktail"></i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Card Title</span>
+      <p class="cocktail-page__right-panel__text">
+						<span>Description: </span>{{ cocktail.description }}</p>
+					<p class="cocktail-page__right-panel__text">
+						<span>Ingredients: </span>{{ cocktail.ingredients }}</p>
+					<p class="cocktail-page__right-panel__text">
+						<span>How To: </span>{{ cocktail.how_to }}</p>
+    </div>
+  </div>
+  {% endfor %}
             <a aria-label="Cocktails" class="btn btn__primary" href="{{ url_for('cocktails') }}">View All Cocktails</a>
             
         </div>
     </div>
 </section>
 {% endblock %}
+ 
