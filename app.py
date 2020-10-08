@@ -19,12 +19,12 @@ def index():
 
     return render_template('pages/index.html')
 
-@app.route('/<myname>')
+@app.route('/<username>')
 def name():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
-    return render_template('pages/index.html', myname=name)
+    return render_template('pages/index.html', user=username)
 # Logout page
 @app.route('/logout')
 def logout():
@@ -75,22 +75,28 @@ def register():
 
     return render_template('components/forms/register-form.html')
 
+
 # My Cocktail Page
 @app.route('/cocktailpage')
 def my_cocktails():
 
-    cocktails = mongo.db.cocktails.find()
+    # set the filter query
+    myquery = {'cocktail_author': session['username']}
+    # collect all cocktails
+    cocktails = mongo.db.cocktails.find(myquery)
 
     return render_template("pages/cocktails/my-cocktails.html", page_title="My Cocktails", cocktails=cocktails)
 
+
 # All cocktail page
-@app.route('/allcocktails')
+@app.route('/allcocktails', methods=['GET', 'POST'])
 def cocktails():
 
     if 'username' not in session: redirect(url_for('login'))
     cocktails = mongo.db.cocktails.find()
 
     return render_template("pages/cocktails/all-cocktails.html", page_title="All Cocktails", cocktails=cocktails)
+
 
 # Add Cocktail
 @ app.route('/cocktail/add', methods=["GET"])
@@ -104,14 +110,17 @@ def insert_cocktail():
     """
     Adds user cocktail into the database.
     """
+
     inserted_cocktail = mongo.db.cocktails.insert_one({
-        'name': request.form.get('name'),
+        'cocktail_author': session['username'],
+        'cocktail_name': request.form.get('cocktail_name'),
         'description': request.form.get('description'),
         'ingredients': request.form.get('ingredients'),
         'how_to': request.form.get('how_to'),
         'image': request.form.get('image')})
 
     return redirect(url_for('my_cocktails'))
+
 
 # Edit cocktail page
 @app.route('/cocktail/edit/<drink_id>', methods=["GET", "POST"])
@@ -120,7 +129,7 @@ def edit_cocktail(drink_id):
     if request.method == 'POST':
         cocktail = mongo.db.cocktails
         cocktail.update({'_id': ObjectId(drink_id)},
-                        {'name': request.form.get('name'),
+                        {'cocktail_name': request.form.get('cocktail_name'),
                          'description': request.form.get('description'),
                          'ingredients': request.form.get('ingredients'),
                          'how_to': request.form.get('how_to'),
