@@ -16,14 +16,14 @@ background-color: #c33c54;
     color: #fff;
 }
 
+
 /* contact form background*/
 #contact-form {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601470132/background2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 107%;
-  height: 35em;
+  min-height: 600px;
 }
   @media (min-width: 600px) {   
 }
@@ -44,8 +44,7 @@ background-color: #c33c54;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 107%;
-  height: 35em;
+  min-height: 600px;
 }
   @media (min-width: 600px) {   
 }
@@ -86,7 +85,7 @@ footer a:hover,
 footer a:focus{
     color: #fff;
 }
-a {
+footer a {
     color: #c33c54;
     text-decoration: none;
     background-color: transparent;
