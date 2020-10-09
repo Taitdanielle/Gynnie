@@ -16,7 +16,6 @@ background-color: #c33c54;
     color: #fff;
 }
 
-
 /* contact form background*/
 #contact-form {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1601470132/background2.jpg");
@@ -48,7 +47,7 @@ background-color: #c33c54;
 }
   @media (min-width: 600px) {   
 }
-
+/* login background */
 #login-form {
   background-image: url("https://res.cloudinary.com/dkvc1tmqp/image/upload/v1602004108/pexels-toni-cuenca-616836_vzeaj1.jpg");
   background-position: center;
@@ -73,12 +72,12 @@ background-color: #c33c54;
 footer {
     padding: 15px;
     font-size: 15px;
-    width: 100px;
     text-align: center;
     text-decoration: none;
     background-color:#c33c54; 
     min-height: 70px;
-	margin: 0;
+    position: absolute;
+    width: 100%;
 }
 
 footer a:hover,
@@ -90,7 +89,7 @@ footer a {
     text-decoration: none;
     background-color: transparent;
 }
-
+/* text styles */
 p {
     text-align: center;
 	color: #254E70;
